@@ -12,7 +12,7 @@ module ::DiscordBot::DiscourseEventsHandlers
           ::DiscordBot::Bot.discord_bot.send_message(SiteSetting.discord_bot_announcement_channel_id, message)
         else
           if topic_listening_categories.include?(posted_category.to_s) && post.post_number = 1 then
-            message = "There's a new Topic in the '#{posted_category_name}' Category on Discourse: #{Discourse.base_url + post.url}"
+            message = "Un nouvel article est disponible dans la catégorie '#{posted_category_name}' #{Discourse.base_url + post.url}"
             ::DiscordBot::Bot.discord_bot.send_message(SiteSetting.discord_bot_announcement_channel_id, message)
           end
         end
